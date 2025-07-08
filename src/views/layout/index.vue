@@ -57,11 +57,21 @@ onMounted(() => {
 
       <!-- 主体内容 -->
       <el-main class="main-content">
-
+        <router-view />
       </el-main>
+
       <!-- 页脚内容 -->
       <el-footer class="footer-content">
-
+        <div class="copyright-container">
+          <!-- 版权信息主体 -->
+          <p class="copyright-text">
+            © {{ new Date().getFullYear() }} 神奇之星 | BUPT 人工智能专业
+          </p>
+          <!-- 附加信息（可选） -->
+          <p class="extra-info">
+            专注于AI技术探索与实践 | 学习记录与分享
+          </p>
+        </div>
       </el-footer>
     </el-container>
   </div>
@@ -75,6 +85,18 @@ onMounted(() => {
   align-items: center;
   padding: 0 20px;
   height: 70px;
+  /* 新增：固定头部在顶端 */
+  /* 固定定位 */
+  position: fixed;
+  /* 距离顶部0 */
+  top: 0;
+  /* 距离左侧0 */
+  left: 0;
+  /* 占满全屏宽度 */
+  width: 100%;
+  /* 确保在其他内容上方（避免被遮挡） */
+  z-index: 1000;
+
 }
 
 #logo-container {
@@ -144,15 +166,55 @@ onMounted(() => {
   background-color: #45CB9C;
   min-height: calc(100vh - 120px);
   /* 减去header和footer的高度 */
+  /* 新增：顶部外边距，抵消header高度，避免内容被遮挡 */
+  margin-top: 70px;
 }
 
 .footer-content {
-  background-color: #242424;
+  background-color: #484848;
   opacity: 0.5;
-  height: 60px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+}
+
+.footer-content {
+  /* 与header背景色统一，增强整体感 */
+  background-color: #0F172A;
+  /* 略微提高透明度，避免过于厚重 */
+  opacity: 0.9;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 浅灰色文字，提升可读性 */
+  color: #E2E8F0;
+  /* 左右内边距，避免内容贴边 */
+  padding: 0 20px;
+  /* 确保在页面底部（配合main的min-height） */
+  margin-top: auto;
+}
+
+.copyright-container {
+  /* 文字居中 */
+  text-align: center;
+}
+
+.copyright-text {
+  font-size: 14px;
+  /* 底部外边距，与附加信息分隔 */
+  margin: 0 0 8px 0;
+  /* 略微加粗主版权信息 */
+  font-weight: 500;
+}
+
+.extra-info {
+  font-size: 12px;
+  /* 更浅的文字色，区分主次 */
+  color: #94A3B8;
+  /* 清除默认外边距 */
+  margin: 0;
 }
 </style>
