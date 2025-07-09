@@ -32,17 +32,17 @@ onMounted(() => {
 
 <template>
   <div class="common-layout">
-    <el-container>
+    <el-container class="full-height">
       <el-header id="header-container" router>
         <div id="logo-container" index="/index">
           <!-- LOGO -->
-          <img src="@/assets/img/layout/logo.svg" alt="网站Logo" id="logo-image">
+          <img src="@/assets/image/layout/logo.svg" alt="网站Logo" id="logo-image">
 
           <!-- 使用ElementPlus分隔线 -->
           <el-divider direction="vertical" id="custom-divider" />
 
           <!-- 音乐播放器 -->
-          <img src="@/assets/img/layout/disk.png" alt="音乐播放器" id="disk-image" @click="toggleMusic"
+          <img src="@/assets/image/layout/disk.png" alt="音乐播放器" id="disk-image" @click="toggleMusic"
             :class="{ 'playing': isPlaying }">
 
           <!-- 音频元素 - 设置为隐藏 -->
@@ -78,6 +78,18 @@ onMounted(() => {
 </template>
 
 <style scoped>
+/* .full-height {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 #header-container {
   background-color: #0F172A;
   display: flex;
@@ -96,7 +108,9 @@ onMounted(() => {
   width: 100%;
   /* 确保在其他内容上方（避免被遮挡） */
   z-index: 1000;
-
+  /* 新增：底部亮线分隔 */
+  box-shadow: 0 2px 4px rgba(148, 163, 184, 0.2);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 #logo-container {
@@ -119,7 +133,7 @@ onMounted(() => {
   height: 35px;
   margin: 0 8px;
   /* 上移 5px（正值向下，负值向上） */
-  transform: translateY(-11px);
+  transform: translateY(-13px);
 }
 
 #disk-image {
@@ -163,21 +177,20 @@ onMounted(() => {
 }
 
 .main-content {
-  background-color: #45CB9C;
-  min-height: calc(100vh - 120px);
-  /* 减去header和footer的高度 */
-  /* 新增：顶部外边距，抵消header高度，避免内容被遮挡 */
-  margin-top: 70px;
-}
+  /* 取消固定的min-height */
+  /* min-height: calc(100vh - 120px); */
 
-.footer-content {
-  background-color: #484848;
-  opacity: 0.5;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  /* 使用flex-grow让main占据剩余空间 */
+  /* flex-grow: 1; */
+
+  /* 顶部留出header的高度 */
+  margin-top: 70px;
+
+  /* 确保宽度占满 */
+  width: 100%;
+
+  /* 移除可能影响宽度的内边距 */
+  padding: 0;
 }
 
 .footer-content {
@@ -194,7 +207,11 @@ onMounted(() => {
   /* 左右内边距，避免内容贴边 */
   padding: 0 20px;
   /* 确保在页面底部（配合main的min-height） */
-  margin-top: auto;
+  /* margin-top: auto; */
+  width: 100%;
+  /* 新增：顶部亮线分隔 */
+  box-shadow: 0 -2px 4px rgba(148, 163, 184, 0.2);
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
 }
 
 .copyright-container {
