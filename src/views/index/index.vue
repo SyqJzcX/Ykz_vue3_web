@@ -14,6 +14,7 @@
     <div class="video-text">
       <div class="welcome-text">欢迎来到</div>
       <div class="magic-text">神奇之星</div>
+      <router-link to="/main" class="enter-text">进入星球，探索无限可能→</router-link>
     </div>
 
     <!-- 个人信息 -->
@@ -25,8 +26,10 @@
             Github 个人主页：https://github.com/SyqJzcX
           </a>
         </div>
+        <div class="info-item">业余爱好: basketball, reading, traveling, cooking</div>
         <div class="info-item">研究方向: Artificial Intelligence, Data Science, Software Engineering</div>
-        <div class="info-item">办公地点: Room 128, Teaching Building 2, Beijing University of Posts and Telecommunications</div>
+        <div class="info-item">办公地点: Room 128, Teaching Building 2, Beijing University of Posts and Telecommunications
+        </div>
       </div>
     </div>
 
@@ -86,13 +89,26 @@
   animation: float 6s ease-in-out 0.6s infinite;
 }
 
+.enter-text {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #45CB9C;
+  margin-top: 1rem;
+  cursor: pointer;
+  text-decoration: underline;
+  background-color: transparent;
+  animation: float 4s ease-in-out infinite;
+}
+
 @keyframes float {
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-8px);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -143,15 +159,13 @@
 
 /* 内容展示 */
 .content {
-  background: linear-gradient(
-    to bottom,
-    #197AA7 0%,
-    #4F96BB 20%,
-    #52AAC6 40%,
-    #4BBBAF 60%,
-    #49C1A7 80%,
-    #45CB9C 100%
-  );
+  background: linear-gradient(to bottom,
+      #197AA7 0%,
+      #4F96BB 20%,
+      #52AAC6 40%,
+      #4BBBAF 60%,
+      #49C1A7 80%,
+      #45CB9C 100%);
   height: 700px;
 }
 </style>

@@ -34,9 +34,11 @@ onMounted(() => {
   <div class="common-layout">
     <el-container class="full-height">
       <el-header id="header-container" router>
-        <div id="logo-container" index="/index">
+        <div id="logo-container">
           <!-- LOGO -->
-          <img src="@/assets/image/layout/logo.svg" alt="网站Logo" id="logo-image">
+          <router-link to="/index">
+            <img src="@/assets/image/layout/logo.svg" alt="网站Logo" id="logo-image">
+          </router-link>
 
           <!-- 使用ElementPlus分隔线 -->
           <el-divider direction="vertical" id="custom-divider" />
@@ -78,16 +80,10 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* .full-height {
-  height: 100vh;
+.full-height {
   display: flex;
-  flex-direction: column;
-} */
-
-html,
-body {
-  margin: 0;
-  padding: 0;
+  flex-direction: column; /* 垂直排列 header 和 main */
+  min-height: 100vh; /* 确保占满整个视口高度 */
 }
 
 #header-container {
@@ -96,7 +92,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  height: 70px;
+  height: 100px;
   /* 新增：固定头部在顶端 */
   /* 固定定位 */
   position: fixed;
@@ -115,11 +111,11 @@ body {
 
 #logo-container {
   cursor: pointer;
-  height: 40px;
+  height: 70px;
 }
 
 #logo-image {
-  height: 40px;
+  height: 70px;
   transition: filter 0.3s ease;
 }
 
@@ -130,14 +126,14 @@ body {
 }
 
 #custom-divider {
-  height: 35px;
-  margin: 0 8px;
+  height: 60px;
+  margin: 0 15px;
   /* 上移 5px（正值向下，负值向上） */
-  transform: translateY(-13px);
+  transform: translateY(-27px);
 }
 
 #disk-image {
-  height: 35px;
+  height: 65px;
   transition: filter 0.3s ease;
 }
 
@@ -184,13 +180,22 @@ body {
   /* flex-grow: 1; */
 
   /* 顶部留出header的高度 */
-  margin-top: 70px;
+  /* margin-top: 100; */
 
   /* 确保宽度占满 */
   width: 100%;
 
+  height: 100%;
+
   /* 移除可能影响宽度的内边距 */
-  padding: 0;
+  padding: 100px 0 0 0;
+
+  /* 为子元素提供定位基准（可选） */
+  position: relative;
+
+  /* padding-top: 100px; */
+
+  /* box-sizing: border-box; padding 计入总高度 */
 }
 
 .footer-content {
@@ -198,7 +203,7 @@ body {
   background-color: #0F172A;
   /* 略微提高透明度，避免过于厚重 */
   opacity: 0.9;
-  height: 100px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -220,7 +225,7 @@ body {
 }
 
 .copyright-text {
-  font-size: 14px;
+  font-size: 18px;
   /* 底部外边距，与附加信息分隔 */
   margin: 0 0 8px 0;
   /* 略微加粗主版权信息 */
@@ -228,7 +233,7 @@ body {
 }
 
 .extra-info {
-  font-size: 12px;
+  font-size: 16px;
   /* 更浅的文字色，区分主次 */
   color: #94A3B8;
   /* 清除默认外边距 */
