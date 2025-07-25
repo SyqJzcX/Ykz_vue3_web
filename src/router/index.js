@@ -5,6 +5,7 @@ import LayoutView from '@/views/layout/index.vue'
 import MainView from '@/views/main/index/index.vue'
 import HobbyView from '@/views/main/hobby/index.vue'
 import LearningView from '@/views/main/learning/index.vue'
+import WorkingView from '@/views/main/working/index.vue'
 // import LoginView from '@/views/login/index.vue'
 
 const router = createRouter({
@@ -33,6 +34,11 @@ const router = createRouter({
                             path: 'learning', // 完整路径为 /main/learning
                             name: 'main.learning',
                             component: LearningView
+                        },
+                        {
+                            path: 'working', // 完整路径为 /main/working
+                            name: 'main.working',
+                            component: WorkingView
                         },
                         // 可以添加更多子路由...
                     ]
