@@ -4,7 +4,6 @@
 
 <template>
     <div class="container">
-        <img src="@/assets/image/main/learn_anything/cook.jpg" alt="Learn Image" height="750px" width="750px"/>
     </div>
 </template>
 

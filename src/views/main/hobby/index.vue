@@ -4,7 +4,11 @@
 
 <template>
     <div class="container">
-        <img src="@/assets/image/main/hobby/red_trousers.png" alt="Red Trousers" />
+        <span>
+            <img src="@/assets/image/main/hobby/red_trousers.png" alt="Red Trousers" height="500px" />
+            <img src="@/assets/image/main/hobby/cook.jpg" alt="Cook" height="500px" />
+            <img src="@/assets/image/main/hobby/sheep.png" alt="Sheep" height="500px" />
+        </span>
     </div>
 </template>
 
@@ -17,7 +21,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* 设置字体大小 */
-    color: #333; /* 设置字体颜色 */
+    font-size: 24px;
+    /* 设置字体大小 */
+    color: #333;
+    /* 设置字体颜色 */
 }
 </style>
