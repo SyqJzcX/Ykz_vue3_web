@@ -4,7 +4,7 @@
 
 <template>
     <div class="container">
-        hobby
+        <img src="@/assets/image/main/hobby/red_trousers.png" alt="Red Trousers" />
     </div>
 </template>
 
@@ -13,7 +13,7 @@
     position: relative;
     width: 100%;
     height: 750px;
-    background-color: #f0f0f0; /* 设置背景颜色 */
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;

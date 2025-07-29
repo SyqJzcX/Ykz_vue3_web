@@ -19,7 +19,8 @@ const handleClose = (key: string, keyPath: string[]) => {
         <el-container class="full-height">
             <!-- 侧边栏 -->
             <el-aside class="el-aside">
-                <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" router>
+                <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+                    router>
                     <el-sub-menu index="1">
                         <template #title>
                             <el-icon>
@@ -89,12 +90,21 @@ const handleClose = (key: string, keyPath: string[]) => {
 .el-main {
     padding: 0px;
     height: 100%;
+    background: linear-gradient(to bottom,
+            #197AA7 0%,
+            #4F96BB 20%,
+            #52AAC6 40%,
+            #4BBBAF 60%,
+            #49C1A7 80%,
+            #45CB9C 100%);
 }
 
 /* 设置菜单中所有常规状态文字颜色为白色 */
 :deep(.el-menu) {
-    --el-menu-text-color: white; /* 常规状态文字颜色 */
-    --el-menu-item-group-title-color: white; /* 分组标题颜色 */
+    --el-menu-text-color: white;
+    /* 常规状态文字颜色 */
+    --el-menu-item-group-title-color: white;
+    /* 分组标题颜色 */
     background-color: transparent;
     border-right: none;
 }

@@ -36,13 +36,7 @@ onMounted(() => {
     position: relative;
     width: 100%;
     height: 760px;
-    background: linear-gradient(to bottom,
-            #197AA7 0%,
-            #4F96BB 20%,
-            #52AAC6 40%,
-            #4BBBAF 60%,
-            #49C1A7 80%,
-            #45CB9C 100%);
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
